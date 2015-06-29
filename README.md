@@ -1,4 +1,4 @@
-icode server
+Biicode server
 ============
 
 Installation
