@@ -1,4 +1,4 @@
-Biicode server
+icode server
 ============
 
 Installation
@@ -20,8 +20,8 @@ Create an empty file named \__init__.py
 
 Checkout biicode **server** and biicode **common** repositories:
 
-    > git clone git@github.com/biicode/bii-server server
-    > git clone git@github.com/biicode/common
+    > git clone git@github.com:biicode/bii-server server
+    > git clone git@github.com:biicode/common
 
 Install in your system *python-dev*,  *build-essential* and *libevent-dev*. If you are in a Debian based system just execute:
 
@@ -33,12 +33,12 @@ Now you can install the python requirements (in bii-server folder):
 
 Export the following environment variables:
 
-**PORT** => Port where server will run. EX: 9000
-**BII_MONGO_URI** =>  mongoDB database URI. *EX: mongodb://username:password@host:port*
-**BII_LOGGING_LEVEL** => 10 for debug, 20 for info, 30 for warning and 40 for errors
-**BII_JWT_SECRET_KEY** => A string with a secret key used for auth keys generation
-**BII_LAST_COMPATIBLE_CLIENT** => 2.3
-**BII_SSL_ENABLED** => 1
+- **PORT** => Port where server will run. EX: 9000
+- **BII_MONGO_URI** =>  mongoDB database URI. *EX: mongodb://username:password@host:port*
+- **BII_LOGGING_LEVEL** => 10 for debug, 20 for info, 30 for warning and 40 for errors
+- **BII_JWT_SECRET_KEY** => A string with a secret key used for auth keys generation
+- **BII_LAST_COMPATIBLE_CLIENT** => 2.3
+- **BII_SSL_ENABLED** => 1
 
 You also have to add to **PYTHONPATH** environment variable the folder containing "biicode" folder.
 So, if you created **/home/john/biicode/** you have to export **PYTHONPATH=/home/john/** to allow python to find the biicode package. 
@@ -57,6 +57,10 @@ To run the server execute:
 
 	> foreman start
 
+
+To create users in server execute this in biicode/server/admin folder: (remember to set PYTHONPATH):
+
+    > python admin.py 
 
 **Client** 
 
@@ -103,4 +107,5 @@ Dockerfile:
 	
 	WORKDIR /home/biicode/server
 	RUN sudo pip install -r requirements.txt 
+
 
