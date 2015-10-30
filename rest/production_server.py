@@ -1,8 +1,4 @@
 import sys
-if 'gevent' in sys.modules:
-    from gevent import monkey
-    monkey.patch_all()
-
 from biicode.server.rest.rest_api_server import RestApiServer
 from biicode.server.conf import BII_MONGO_URI, BII_MEMCACHE_SERVERS,\
     BII_MEMCACHE_USERNAME, BII_MEMCACHE_PASSWORD, BII_MAX_MONGO_POOL_SIZE
